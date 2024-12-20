@@ -1,0 +1,28 @@
+{%extends 'base.html'%}
+
+{%block main_block%}
+
+<h2>Edit Employee</h2>
+
+<div class="container">
+   <div class="row">
+    <div class="col-4"></div>
+
+    <div class="col-4">
+        <form action="" method="post" enctype="multipart/form-data" class="bg-light rounded p-3 m-3">
+
+            {%csrf_token%}
+            {{form}}
+    
+            <div class="mt-3">
+                <input class="btn btn-info" type="submit" value="Edit">
+            </div>
+            </form>
+    </div>
+    <div class="col-4"></div>
+   </div>
+</div>
+
+
+
+{%endblock%}

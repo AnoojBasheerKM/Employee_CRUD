@@ -1,0 +1,48 @@
+{%extends 'base.html'%}
+
+{%block main_block%}
+
+<div class="container">
+    <div class="row">
+        <div class="m-3">
+            <a href="{%url 'employee-add'%}" class="btn btn-primary">Add Employee</a>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <table class="table table-stripped mt-3 p-3">
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Salary</th>
+            <th>Department</th>
+            <th>Picture</th>
+            <th>Action</th>
+        </tr>
+        
+            {%for e in data %}
+            <tr>
+                <td>{{e.name}}</td>
+                <td>{{e.email}}</td>
+                <td>{{e.salary}}</td>
+                <td>{{e.department}}</td>
+                <td>
+                    {%if e.picture %}
+                    <img src="{{e.picture.url}}" alt="" class="" height="100px">
+                    {%endif%}
+                </td>
+                <td>
+                    <a href="{% url 'employee-details' e.id%}">Details</a>
+                    <a href="{% url 'employee-delete' e.id%}">Delete</a>
+                    <a href="{% url 'employee-edit' e.id%}">Update</a>
+                    
+                   
+                </td>
+            </tr>
+            {%endfor%}
+
+    </table>
+</div>
+
+
+{%endblock%}

@@ -1,0 +1,37 @@
+{%extends 'base.html'%}
+
+
+{%load static%}
+
+
+{%block main_block%}
+
+
+
+
+    <div class="container mt-5">
+        
+
+       <div class="row">
+        <div class="col-2"></div>
+
+        <div class="col-8">
+            
+        <h2>Add Employee</h2>
+            <img src="{%static 'images/petronas.jpg'%}" alt="" width="100px" height="100px">
+            <form action="" method="post" enctype="multipart/form-data" class="bg-light rounded p-3 m-3">
+
+                {%csrf_token%}
+                {{form}}
+        
+                <div class="m-3">
+                    <input class="btn btn-info" type="submit" value="Add">
+                </div>
+                </form>
+        </div>
+        <div class="col-2"></div>
+       </div>
+    </div>
+
+
+{%endblock%}
